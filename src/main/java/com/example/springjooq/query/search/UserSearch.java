@@ -28,7 +28,7 @@ public class UserSearch {
     public static Condition buildSearchCondition(Map<String, String> params) {
         var condition = DSL.noCondition();
         if(params.containsKey(SearchKeys.NAME.value)) {
-            var name = params.get(SearchKeys.EMAIL.value);
+            var name = params.get(SearchKeys.NAME.value);
             condition = condition.and(USERS.NAME.likeIgnoreCase("%" + name + "%"));
         }
         if(params.containsKey(SearchKeys.EMAIL.value)) {
